@@ -1,2 +1,2 @@
 #!/bin/bash
-for a in {a..z}; do for b in {a..z}; do if [[ $a$b != oo ]]; then echo "$a$b"; fi; done; done
+for i in {0..675}; do a=$((i/26+97)); b=$((i%26+97)); c=$(printf \\$(printf '%03o' $a))$(printf \\$(printf '%03o' $b)); if [[ $c != oo ]]; then echo $c; fi; done
